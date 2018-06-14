@@ -1,0 +1,15 @@
+
+
+.text-brown
+{
+  color: brown;
+}
+
+.separator
+{
+  text-align: center;
+  background-color: #3498db;
+  border-color: #3498db;
+  width: 150px;
+  height: 2px;
+}
