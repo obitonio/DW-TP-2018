@@ -13,15 +13,50 @@
      </head>
 
      <body style="background-color:white;">
-       <h1>Les pays du monde</h1>
-       <span>Mise en forme par : moi, mon binôme (B3545)</span>
-        <hr class="separator"/>
+			 <div style="text-align:center">
+	       <h1>Les pays du monde</h1>
+				 <hr class="separator"/>
+	       <span>Mise en forme par : moi, mon binôme (B3545)</span>
+			 </div>
+
 
         <h2>Continents (regions)</h2>
-        <xsl:for-each select="//country">
-
+        <xsl:for-each select="//country/infosRegion/region[text() and not(text() = preceding::text())]">
+					<h4><xsl:value-of select="text()"/></h4>
+					<p>Sous-régions :
+  				<xsl:for-each select="//country/infosRegion[not(subregion = following::subregion)]/subregion[../region = current()]">
+						<xsl:value-of select="text()"/> (<xsl:value-of select="count(//country/infosRegion/subregion[text() = current()])"/>)
+						<xsl:if test="not(position() = last())">
+						,
+						</xsl:if>
+					</xsl:for-each>
+					</p>
         </xsl:for-each>
+
+				<h4>Sans continent</h4>
+
+				<xsl:value-of select="count(//region[. = ''])"/> pays
+
         <hr class="separator"/>
+				<p> Pays avec 7 voisins :
+				<xsl:for-each select="//country[count(borders) = 7]/name/common">
+					<xsl:value-of select="text()"/>
+					<xsl:if test="not(position() = last())">
+					,
+					</xsl:if>
+				</xsl:for-each>
+				</p>
+
+				<p>Pays ayant le plus long nom :
+					<xsl:for-each select="//country">
+			      <xsl:sort select="string-length(name/common/.)" data-type="number" order="descending" />
+						<xsl:if test="position() = 1">
+			        <xsl:value-of select="./name/common/text()"/>
+						</xsl:if>
+			    </xsl:for-each>
+				</p>
+
+				  <hr class="separator"/>
 
         <table class="table">
           <tr class="thead-light">
