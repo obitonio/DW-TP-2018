@@ -4,21 +4,41 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>TP 3IF Ajax</title>
-    <meta name="author" content="Elöd EGYED-ZSIGMOND">
+    <meta name="author" content="Elï¿½d EGYED-ZSIGMOND">
 
     <script type="text/javascript" src="partieJavascript.js"></script>
 
 </head>
 
-<body <p>Fichier à modifier/compélter</p>
+<body <p>Fichier ï¿½ modifier/compï¿½lter</p>
     <p>
-        <input name="button" type="button" id="question1" onClick="question1();" value="Bouton 1" />
-        <br />
-		<input name="button" type="button" id="question2" onClick="question2();" value="Bouton 2" />
-		<br />
-		<input name="button" type="button" id="question2" onClick="question3();" value="Bouton 3" />
-		<input name="text" type="text" id="myText3" value="" />
-		<span id="q3_a_remplacer">Capitale et Nom </span>
+      <!-- Question 1 -->
+      <input name="button" type="button" id="question1" onClick="question1();" value="Bouton 1" />
+      <br />
+      <!-- Question 2 -->
+  		<input name="button" type="button" id="question2" onClick="question2();" value="Bouton 2" />
+  		<br />
+      <!-- Question 3 -->
+  		<input name="button" type="button" id="question3" onClick="question3(document.getElementById('myText3').value);" value="Bouton 3" />
+  		<input name="text" type="text" id="myText3" value="" />
+  		<div id="q3_a_remplacer"><span>Capitale et Nom </span></div>
+      <!-- Question 4 -->
+      <input name="button" type="button" id="question4" onClick="question4();" value="Bouton 4" />
+  		<div id="q4_a_remplacer"><span>Image svg</span></div>
+      <!-- Question 5 -->
+      <input name="button" type="button" id="question5" onClick="question5();" value="Bouton 5" />
+  		<div id="q5_a_remplacer"><span>Titre element</span></div>
+      <!-- Question 6 -->
+      <input name="button" type="button" id="question6" onClick="question6();" value="Bouton 6" />
+  		<div id="q6_a_remplacer"><span>World High</span></div>
+      <!-- Question 7 -->
+      <input name="button" type="button" id="question7" onClick="question7();" value="Bouton 7" />
+  		<div id="q7_a_remplacer"><span>Titre </span></div>
+      <!-- Question 8 -->
+      <input name="button" type="button" id="question8" onClick="question8();" value="Bouton 8" />
+      <div id="q8_a_remplacer"><span>Titre </span></div>
+
+    <!-- Code exemple -->
 		<br />
         <input name="button2" type="button" id="myButton2" onClick="Bouton2_ajaxBibliographie('ajax.bib.xml','ajax.bib.xsl','ul');" value="2. AJAX avec ajax.bib.xml/ajax.bib.xsl" />
         <br />
@@ -32,8 +52,6 @@
     <div id="id_element_a_remplacer">
         <p style="color: red; font-weight: bold;">Cet &eacute;l&eacute;ment va &ecirc;tre remplac&eacute; par une bibliographie en XML mise en forme par une feuille de style XSLT...</p>
     </div>
-
-
 </body>
 
 </html>

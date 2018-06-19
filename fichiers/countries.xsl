@@ -12,7 +12,7 @@
         <title>Pays du monde</title>
      </head>
 
-     <body style="background-color:white;">
+     <body style="background-color:white;" class="container">
 			 <div style="text-align:center">
 	       <h1>Les pays du monde</h1>
 				 <hr class="separator"/>
