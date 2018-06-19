@@ -5,62 +5,77 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>TP 3IF Ajax</title>
     <meta name="author" content="El�d EGYED-ZSIGMOND">
-
     <script type="text/javascript" src="partieJavascript.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" />
 
+    <style>
+        .form-control {
+          background-color: transparent;
+        }
+    </style>
 </head>
 
 <body>
-  <p>Fichier a modifier/completer</p>
+  <h1>TP Donnees du web - Partie 2</h1>
     <p>
       <!-- Question 1 -->
-      <input name="button" type="button" id="question1" onClick="question1();" value="Bouton 1" />
-      <br />
+      <div class="form-control">
+        <label for="question1">Changer la couleur de l'arriere plan et la couleur du texte</label>
+        <input name="button" type="button" id="question1"  onClick="question1();" value="Bouton 1" />
+      </div>
       <!-- Question 2 -->
-  		<input name="button" type="button" id="question2" onClick="question2();" value="Bouton 2" />
-  		<br />
+      <div class="form-control">
+        <label for="question1">Remettre la couleur de l'arriere plan en blanc</label>
+  		    <input name="button" type="button" id="question2" class="btn btn-secondary" onClick="question2();" value="Bouton 2" />
+      </div>
       <!-- Question 3 -->
-  		<input name="button" type="button" id="question3" onClick="question3(document.getElementById('myText3').value,'q3_a_remplacer');" value="Bouton 3" />
-  		<input name="text" type="text" id="myText3" value="" />
-  		<div id="q3_a_remplacer"><span>Capitale et Nom </span></div>
+      <div class="form-control">
+        <label>Trouver nom officiel</label>
+        <input name="text" type="text" id="myText3" value="" />
+    		<input name="button" type="button" id="question3" class="btn btn-secondary" onClick="question3(document.getElementById('myText3').value,'q3_a_remplacer');" value="Bouton 3" />
+    		<div id="q3_a_remplacer"><span></span></div>
+      </div>
       <!-- Question 4 -->
-      <input name="button" type="button" id="question4" onClick="question4();" value="Bouton 4" />
-  		<div id="q4_a_remplacer"><span>Image svg</span></div>
+      <div class="form-control">
+        <label>Charger exemple.svg</label>
+        <input name="button" type="button" id="question4" class="btn btn-secondary" onClick="question4();" value="Bouton 4" />
+    		<div id="q4_a_remplacer"><span></span></div>
+      </div>
       <!-- Question 5 -->
-      <input name="button" type="button" id="question5" onClick="question5();" value="Bouton 5" />
-  		<div id="q5_a_remplacer"><span>Titre element</span></div>
+      <div class="form-control">
+        <label>Rendre les elements cliquables</label>
+        <input name="button" type="button" id="question5" class="btn btn-secondary" onClick="question5();" value="Bouton 5" />
+    		<div id="q5_a_remplacer"><span></span></div>
+      </div>
       <!-- Question 6 -->
-      <input name="button" type="button" id="question6" onClick="question6();" value="Bouton 6" />
-      <div id="q8_a_remplacer"><div>Tableau Pays </div></div>
-  		<div id="q6_a_remplacer"><span>World High</span></div>
+      <div class="form-control">
+        <label>Charger carte du monde</label>
+        <input name="button" type="button" id="question6" class="btn btn-secondary" onClick="question6();" value="Bouton 6" />
+        <div id="q8_a_remplacer"><div></div></div>
+    		<div id="q6_a_remplacer"><span></span></div>
+      </div>
       <!-- Question 7 -->
-      <input name="button" type="button" id="question7" onClick="question7();" value="Bouton 7" />
-  		<div id="q7_a_remplacer"><span>Titre </span></div>
+      <div class="form-control">
+        <label>Rendre les pays cliquables</label>
+        <input name="button" type="button" id="question7" class="btn btn-secondary" onClick="question7();" value="Bouton 7" />
+    		<div id="q7_a_remplacer"><span></span></div>
+      </div>
       <!-- Question 8 -->
-      <input name="button" type="button" id="question8" onClick="question8();" value="Bouton 8" />
-      <div id="q8_a_remplacer"><span>Titre </span></div>
-	  
-	<!-- Question 9 -->
-  		<input name="button" type="button" id="9" onClick="question3(document.getElementById('myText9').value,'q9_a_remplacer');" value="Bouton 9" />
-  		<input list= "autocomplete" type="text" id="myText9" oninput="question9(document.getElementById('myText9').value)"/>
-  		<div id="q9_a_remplacer_liste"><span></span></div>
-		<div id="q9_a_remplacer"><span>Capitale et Nom </span></div>
-	
-	
-    <!-- Code exemple -->
-		<br />
-        <input name="button2" type="button" id="myButton2" onClick="Bouton2_ajaxBibliographie('ajax.bib.xml','ajax.bib.xsl','ul');" value="2. AJAX avec ajax.bib.xml/ajax.bib.xsl" />
-        <br />
-        <input name="button2" type="button" id="myButton3" onClick="Bouton3_ajaxEmployees('Employees.xml');" value="3. AJAX avec Employees.xml" />
-        <br />
-    </p>
-    <div>
-        <p>Les noms sont : <br/>
-            <span id="id_nom_a_remplacer" style="color: red; font-weight: bold;">LES NOMS (Cet &eacute;l&eacute;ment va &ecirc;tre remplac&eacute; par les noms) </span>.</p>
-    </div>
-    <div id="id_element_a_remplacer">
-        <p style="color: red; font-weight: bold;">Cet &eacute;l&eacute;ment va &ecirc;tre remplac&eacute; par une bibliographie en XML mise en forme par une feuille de style XSLT...</p>
-    </div>
+      <div class="form-control">
+        <label>Ajouter les evenements "mouseleave" et "mouseover"</label>
+        <input name="button" type="button" id="question8" class="btn btn-secondary" onClick="question8();" value="Bouton 8" />
+        <div id="q8_a_remplacer"><span></span></div>
+      </div>
+
+	     <!-- Question 9 -->
+       <div class="form-control">
+          <label>Trouver un pays avec autocompletion</label>
+      		<input list= "autocomplete" type="text" id="myText9" oninput="question9(document.getElementById('myText9').value)"/>
+          <input name="button" type="button" id="9" class="btn btn-secondary" onClick="question3(document.getElementById('myText9').value,'q9_a_remplacer');" value="Bouton 9" />
+          <div id="q9_a_remplacer_liste"><span></span></div>
+    		  <div id="q9_a_remplacer"><span></span></div>
+        </div>
+
 </body>
 
 </html>

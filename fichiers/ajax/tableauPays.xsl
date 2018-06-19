@@ -7,7 +7,7 @@
 <xsl:param name="pays" />
 
 <xsl:template match="/">
-  <table border="1">
+  <table class="table table-striped">
     <tr>
       <th>Nom</th>
       <th>Capitale</th>
