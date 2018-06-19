@@ -121,8 +121,35 @@ function question8() {
 
       pays.addEventListener('mouseover', function(e) {
           this.style.fill = 'blue';
+          question8_table(this.getAttribute('title'));
       }, false);
     }
+}
+
+function question8_table(nomPays) {
+  var xsltProcessor = new XSLTProcessor();
+
+  // Chargement du fichier XSL � l'aide de XMLHttpRequest synchrone
+  var xslDocument = chargerHttpXML('tableauPays.xsl');
+
+  // Importation du .xsl
+  xsltProcessor.importStylesheet(xslDocument);
+  xsltProcessor.setParameter(null, 'pays', nomPays);
+
+  // Chargement du fichier XML � l'aide de XMLHttpRequest synchrone
+  var xmlDocument = chargerHttpXML('countriesTP.xml');
+
+  // Cr�ation du document XML transform� par le XSL
+  var newXmlDocument = xsltProcessor.transformToDocument(xmlDocument);
+
+  // Recherche du parent (dont l'id est "here") de l'�l�ment � remplacer dans le document HTML courant
+  var elementHtmlParent = window.document.getElementById("q8_a_remplacer");
+  // Premier �l�ment fils du parent
+  var elementHtmlARemplacer = recupererPremierEnfantDeTypeNode(elementHtmlParent);
+  // Premier �l�ment "elementName" du nouveau document (par exemple, "ul", "table"...)
+  var elementAInserer = newXmlDocument.getElementsByTagName('table')[0];
+  // Remplacement de l'�l�ment
+  elementHtmlParent.replaceChild(elementAInserer, elementHtmlARemplacer);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
