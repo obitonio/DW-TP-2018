@@ -116,14 +116,12 @@ function question8() {
       var pays = document.getElementById(lesElements[i].id);
 
       pays.addEventListener('mouseleave', function(e) {
-          var elementHtml = window.document.getElementById(e.explicitOriginalTarget.id);
-          elementHtml.style.fill = 'red';
-      });
-      pays.addEventListener('mouseover', function(e) {
-          var elementHtml = window.document.getElementById(e.explicitOriginalTarget.id);
-          elementHtml.style.fill = 'blue';
-      });
+          this.style.fill = '#CCCCCC';
+      }, false);
 
+      pays.addEventListener('mouseover', function(e) {
+          this.style.fill = 'blue';
+      }, false);
     }
 }
 
