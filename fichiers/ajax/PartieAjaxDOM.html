@@ -12,9 +12,14 @@
 
 <body <p>Fichier à modifier/compélter</p>
     <p>
-        <input name="button" type="button" id="myButton1" onClick="setNom(document.getElementById('myText1').value);" value="1. AJAX simple" />
-        <input name="text" type="text" id="myText1" value="Toto" />
+        <input name="button" type="button" id="question1" onClick="question1();" value="Bouton 1" />
         <br />
+		<input name="button" type="button" id="question2" onClick="question2();" value="Bouton 2" />
+		<br />
+		<input name="button" type="button" id="question2" onClick="question3();" value="Bouton 3" />
+		<input name="text" type="text" id="myText3" value="" />
+		<span id="q3_a_remplacer">Capitale et Nom </span>
+		<br />
         <input name="button2" type="button" id="myButton2" onClick="Bouton2_ajaxBibliographie('ajax.bib.xml','ajax.bib.xsl','ul');" value="2. AJAX avec ajax.bib.xml/ajax.bib.xsl" />
         <br />
         <input name="button2" type="button" id="myButton3" onClick="Bouton3_ajaxEmployees('Employees.xml');" value="3. AJAX avec Employees.xml" />

@@ -14,6 +14,15 @@ function setNom(nom) {
     elementHtmlARemplir.innerHTML = nom;
 }
 
+//fond bleu et couleur bouton blanc
+function question1(){
+	document.body.style.backgroundColor = "lightblue";
+    document.getElementById("question1").style.color = "white";
+}
+function question2(){
+	document.body.style.backgroundColor = "white";
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //charge le fichier XML se trouvant à l'URL relative donné dans le paramètreet le retourne
 function chargerHttpXML(xmlDocumentUrl) {
