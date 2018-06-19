@@ -19,7 +19,7 @@
   		<input name="button" type="button" id="question2" onClick="question2();" value="Bouton 2" />
   		<br />
       <!-- Question 3 -->
-  		<input name="button" type="button" id="question3" onClick="question3(document.getElementById('myText3').value);" value="Bouton 3" />
+  		<input name="button" type="button" id="question3" onClick="question3(document.getElementById('myText3').value,'q3_a_remplacer');" value="Bouton 3" />
   		<input name="text" type="text" id="myText3" value="" />
   		<div id="q3_a_remplacer"><span>Capitale et Nom </span></div>
       <!-- Question 4 -->
@@ -37,7 +37,14 @@
       <!-- Question 8 -->
       <input name="button" type="button" id="question8" onClick="question8();" value="Bouton 8" />
       <div id="q8_a_remplacer"><span>Titre </span></div>
-
+	  
+	<!-- Question 9 -->
+  		<input name="button" type="button" id="9" onClick="question3(document.getElementById('myText9').value,'q9_a_remplacer');" value="Bouton 9" />
+  		<input list= "autocomplete" type="text" id="myText9" oninput="question9(document.getElementById('myText9').value)"/>
+  		<div id="q9_a_remplacer_liste"><span></span></div>
+		<div id="q9_a_remplacer"><span>Capitale et Nom </span></div>
+	
+	
     <!-- Code exemple -->
 		<br />
         <input name="button2" type="button" id="myButton2" onClick="Bouton2_ajaxBibliographie('ajax.bib.xml','ajax.bib.xsl','ul');" value="2. AJAX avec ajax.bib.xml/ajax.bib.xsl" />

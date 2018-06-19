@@ -24,7 +24,7 @@ function question2(){
 	document.body.style.backgroundColor = "white";
 }
 
-function question3(nomPays){
+function question3(nomPays, elemARemplacer){
   var xsltProcessor = new XSLTProcessor();
 
   // Chargement du fichier XSL � l'aide de XMLHttpRequest synchrone
@@ -41,7 +41,7 @@ function question3(nomPays){
   var newXmlDocument = xsltProcessor.transformToDocument(xmlDocument);
 
   // Recherche du parent (dont l'id est "here") de l'�l�ment � remplacer dans le document HTML courant
-  var elementHtmlParent = window.document.getElementById("q3_a_remplacer");
+  var elementHtmlParent = window.document.getElementById(elemARemplacer);
   // Premier �l�ment fils du parent
   var elementHtmlARemplacer = recupererPremierEnfantDeTypeNode(elementHtmlParent);
   // Premier �l�ment "elementName" du nouveau document (par exemple, "ul", "table"...)
@@ -123,6 +123,33 @@ function question8() {
           this.style.fill = 'blue';
       }, false);
     }
+}
+
+function question9(nomPays){
+  var xsltProcessor = new XSLTProcessor();
+
+  // Chargement du fichier XSL � l'aide de XMLHttpRequest synchrone
+  var xslDocument = chargerHttpXML('autocomplete.xsl');
+  // Importation du .xsl
+  xsltProcessor.importStylesheet(xslDocument);
+  xsltProcessor.setParameter(null, 'pays', nomPays);
+
+  // Chargement du fichier XML � l'aide de XMLHttpRequest synchrone
+  var xmlDocument = chargerHttpXML('countriesTP.xml');
+
+  // Cr�ation du document XML transform� par le XSL
+  var newXmlDocument = xsltProcessor.transformToDocument(xmlDocument);
+
+  // Recherche du parent (dont l'id est "here") de l'�l�ment � remplacer dans le document HTML courant
+  var elementHtmlParent = window.document.getElementById("q9_a_remplacer_liste");
+  // Premier �l�ment fils du parent
+  var elementHtmlARemplacer = recupererPremierEnfantDeTypeNode(elementHtmlParent);
+  // Premier �l�ment "elementName" du nouveau document (par exemple, "ul", "table"...)
+  var elementAInserer = newXmlDocument.getElementsByTagName('datalist')[0];
+
+  // Remplacement de l'�l�ment
+  elementHtmlParent.replaceChild(elementAInserer, elementHtmlARemplacer);
+	
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
